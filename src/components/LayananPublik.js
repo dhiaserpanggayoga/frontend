@@ -4,13 +4,13 @@ import { FaFileAlt, FaPhone, FaEnvelope, FaGlobe } from 'react-icons/fa';
 const layanan = [
   {
     icon: React.createElement(FaFileAlt, { className: 'text-2xl text-blue-500' }),
-    title: 'Administrasi',
-    desc: 'Layanan administrasi seperti pembuatan surat, legalisasi, dan dokumen lainnya.',
+    title: 'Lapor Lampung',
+    desc: 'Sampaikan aspirasi, keluhan, atau pengaduan Anda kepada Pemerintah Provinsi Lampung.',
   },
   {
     icon: React.createElement(FaPhone, { className: 'text-2xl text-green-500' }),
-    title: 'Pengaduan',
-    desc: 'Sampaikan keluhan atau saran anda kepada pemerintah daerah.',
+    title: 'Lembaga Pengadaan Secara Elektronik (LPSE)',
+    desc: 'Mendukung proses pengadaan barang dan jasa secara elektronik.',
   },
   {
     icon: React.createElement(FaEnvelope, { className: 'text-2xl text-red-500' }),
@@ -55,12 +55,18 @@ function LayananPublik() {
               React.createElement('div', { className: 'mb-4', key: 'icon' }, item.icon),
               React.createElement(
                 'h3',
-                { className: 'text-xl font-semibold mb-2 text-gray-800 dark:text-white', key: 'title' },
+                {
+                  className: 'text-xl font-semibold mb-2 text-gray-800 dark:text-white',
+                  key: 'title',
+                },
                 item.title
               ),
               React.createElement(
                 'p',
-                { className: 'text-gray-600 dark:text-gray-300 text-sm', key: 'desc' },
+                {
+                  className: 'text-gray-600 dark:text-gray-300 text-sm',
+                  key: 'desc',
+                },
                 item.desc
               ),
             ]

@@ -92,8 +92,8 @@ function Home() {
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">LAYANAN PUBLIK</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {[
-            { icon: '📝', title: 'Administrasi', desc: 'Layanan surat, dokumen, dan legalisasi resmi.' },
-            { icon: '📞', title: 'Pengaduan', desc: 'Sampaikan keluhan atau laporan ke instansi.' },
+            { icon: '📝', title: 'Lembaga Pengadaan Secara Elektronik (LPSE)', desc: 'pengadaan barang dan jasa secara elektronik.' },
+            { icon: '📞', title: 'Lapor Lampung', desc: 'Sampaikan keluhan atau laporan ke instansi.' },
             { icon: '📬', title: 'Kontak Publik', desc: 'Akses mudah ke dinas atau petugas daerah.' },
             { icon: '🌐', title: 'Layanan Online', desc: 'Layanan digital cepat dari rumah Anda.' }
           ].map((item, i) => (
