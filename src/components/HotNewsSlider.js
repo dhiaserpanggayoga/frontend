@@ -62,7 +62,7 @@ function HotNewsSlider() {
   return (
     <section className="bg-white dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-20 transition-colors duration-300 font-sans">
       <h2 className="text-3xl font-bold mb-10 text-center text-gray-800 dark:text-white tracking-tight">
-        HOT NEWS!
+        BERITA TERKINI
       </h2>
 
       <Swiper
