@@ -25,7 +25,7 @@ const BeritaDetail = () => {
       title: 'Senyuman Kematian LILI',
       desc: 'Senyuman yang sangat responsif membuat otak lunglay',
       date: '31/05/2024',
-      image: '/hoak1.jpg',
+      image: '/berita2.jpeg',
       content: [
         'Senyum LILI saat memimpin apel pagi telah menarik perhatian para pegawai. Banyak yang menilai senyum tersebut membawa aura tersendiri.',
         'Beberapa menyebutnya “senyum kematian” karena bisa membuat siapa pun diam membisu, terpaku oleh ketenangannya.',
@@ -54,15 +54,18 @@ const BeritaDetail = () => {
             {berita.title}
           </h1>
 
-          {/* Gambar Berita */}
-          <div className="flex justify-center">
-            <img
-              src={berita.image}
-              alt={berita.title}
-              onClick={() => setShowZoom(true)}
-              className="w-[400px] max-w-full h-auto object-cover rounded-xl shadow cursor-zoom-in border border-gray-300 dark:border-gray-700"
-            />
-          </div>
+         {/* Gambar Berita + Caption */}
+<div className="flex flex-col items-center space-y-2">
+  <img
+    src={berita.image}
+    alt={berita.title}
+    onClick={() => setShowZoom(true)}
+    className="w-full max-w-3xl h-auto object-cover rounded-xl shadow cursor-zoom-in border border-gray-300 dark:border-gray-700"
+  />
+  <figcaption className="text-sm text-gray-500 dark:text-gray-400 italic text-center">
+    Klik gambar untuk memperbesar
+  </figcaption>
+</div>
 
           {/* Isi Berita (banyak paragraf) */}
           <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">

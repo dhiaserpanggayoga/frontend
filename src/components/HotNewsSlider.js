@@ -31,13 +31,22 @@ const newsData = [
   },
   {
     id: 4,
-    title: 'Kompas: Pemprov Lampung Luncurkan Aplikasi Publik',
+    title: 'Pemprov Lampung Berencana Anggarkan Operasional SMA, SMK dan SLB Negeri Pengganti Uang Komite yang Dihapus',
     date: '03/06/2024',
-    image: '/berita4.jpg',
+    image: '/berita5.jpg',
     external: true,
-    link: 'https://www.kompas.com/regional/read/2024/06/03/123456/pemprov-lampung-aplikasi',
+    link: 'https://www.msn.com/id-id/politik/pemerintah/pemprov-lampung-berencana-anggarkan-operasional-sma-smk-dan-slb-negeri-pengganti-uang-komite-yang-dihapus/ar-AA1GoRtj?ocid=BingNewsVerp',
+  },
+   {
+    id: 5,
+    title: 'Satlantas Polres Tulangbawang Polda Lampung Optimalkan Sosialisasi Bahaya odol',
+    date: '03/06/2024',
+    image: '/berita6.jpg',
+    external: true,
+    link: 'https://lampung.tribunnews.com/2025/06/10/satlantas-polres-tulangbawang-polda-lampung-optimalkan-sosialisasi-bahaya-odolhttps://www.msn.com/id-id/politik/pemerintah/pemprov-lampung-berencana-anggarkan-operasional-sma-smk-dan-slb-negeri-pengganti-uang-komite-yang-dihapus/ar-AA1GoRtj?ocid=BingNewsVerp',
   },
 ];
+
 
 function HotNewsSlider() {
   const swiperRef = useRef(null);
