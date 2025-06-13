@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);  // Menyimpan status dropdown
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleScroll = () => setScrolled(window.scrollY > 30);
+  window.addEventListener('scroll', handleScroll);
 
   return (
     <header
@@ -34,7 +31,7 @@ function Navbar() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-6">
-          {['Beranda', 'Profil', 'Berita', 'Informasi', 'Galeri', 'Kontak', 'IPKD'].map(
+          {['Beranda', 'Profil', 'Berita', 'Informasi', 'Kontak', 'IPKD'].map( // Urutan menu yang sudah diperbaiki
             (menu) => (
               <a
                 key={menu}
@@ -45,11 +42,51 @@ function Navbar() {
               </a>
             )
           )}
+
+          {/* Berita dan Galeri di samping */}
+          <div className="flex space-x-6">
+            {/* Berita */}
+            <a
+              href="#berita"
+              className="font-medium text-sm text-white hover:text-yellow-400 transition"
+            >
+              Berita
+            </a>
+
+            {/* Galeri Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setDropdownOpen(true)}  // Dropdown muncul saat disenter
+              onMouseLeave={() => setDropdownOpen(false)} // Dropdown hilang saat keluar
+            >
+              <button className="font-medium text-sm text-white hover:text-yellow-400">
+                Galeri
+              </button>
+              {dropdownOpen && (
+                <div
+                  className="absolute right-0 w-48 bg-[#263238] rounded-lg shadow-lg mt-2 p-4 z-10"
+                >
+                  <button
+                    onClick={() => alert('Foto dipilih')}
+                    className="block text-white hover:text-yellow-400 text-lg py-2"
+                  >
+                    Foto
+                  </button>
+                  <button
+                    onClick={() => alert('Video dipilih')}
+                    className="block text-white hover:text-yellow-400 text-lg py-2"
+                  >
+                    Video
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
         </nav>
 
         {/* Hamburger Icon (Mobile) */}
         <div className="md:hidden">
-          <button onClick={() => setOpen(!open)} aria-label="Toggle Menu">
+          <button onClick={() => setDropdownOpen(!dropdownOpen)} aria-label="Toggle Menu">
             <svg
               className="w-6 h-6"
               fill="none"
@@ -57,7 +94,7 @@ function Navbar() {
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {open ? (
+              {dropdownOpen ? (
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -76,23 +113,6 @@ function Navbar() {
           </button>
         </div>
       </div>
-
-      {/* Mobile Dropdown Menu */}
-      {open && (
-        <div className="md:hidden bg-[#102027] px-4 pb-4">
-          {['Beranda', 'Profil', 'Berita', 'Informasi', 'Galeri', 'Kontak', 'IPKD'].map(
-            (menu) => (
-              <a
-                key={menu}
-                href={`#${menu.toLowerCase()}`}
-                className="block py-2 text-white hover:text-yellow-400 font-medium"
-              >
-                {menu}
-              </a>
-            )
-          )}
-        </div>
-      )}
 
       {/* Motif Tapis Garis Bawah */}
       <div
